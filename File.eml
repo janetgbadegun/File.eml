@@ -1,0 +1,207 @@
+Received: from GV1P193MB2008.EURP193.PROD.OUTLOOK.COM (2603:10a6:150:2b::10)
+ by AS8P193MB2031.EURP193.PROD.OUTLOOK.COM with HTTPS; Fri, 12 May 2023
+ 14:15:10 +0000
+Received: from BN9PR03CA0439.namprd03.prod.outlook.com (2603:10b6:408:113::24)
+ by GV1P193MB2008.EURP193.PROD.OUTLOOK.COM (2603:10a6:150:2b::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6411.9; Fri, 12 May
+ 2023 14:15:09 +0000
+Received: from BN8NAM11FT115.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:408:113:cafe::97) by BN9PR03CA0439.outlook.office365.com
+ (2603:10b6:408:113::24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.24 via Frontend
+ Transport; Fri, 12 May 2023 14:15:08 +0000
+Authentication-Results: spf=pass (sender IP is 209.85.217.43)
+ smtp.mailfrom=gmail.com; dkim=pass (signature was verified)
+ header.d=gmail.com;dmarc=pass action=none header.from=gmail.com;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates
+ 209.85.217.43 as permitted sender) receiver=protection.outlook.com;
+ client-ip=209.85.217.43; helo=mail-vs1-f43.google.com; pr=C
+Received: from mail-vs1-f43.google.com (209.85.217.43) by
+ BN8NAM11FT115.mail.protection.outlook.com (10.13.177.151) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6387.25 via Frontend Transport; Fri, 12 May 2023 14:15:08 +0000
+X-IncomingTopHeaderMarker:
+ OriginalChecksum:D1117A930AFCB1083E30AEB09488BB412F847D0BA0883862043F04DF8757F77D;UpperCasedChecksum:84ED4CBD891CCF09FB0D432F84FC468A1A12D3EB2A5A7F2B8D6D84023CCDBFD6;SizeAsReceived:2313;Count:13
+Received: by mail-vs1-f43.google.com with SMTP id ada2fe7eead31-436281ac975so222138137.1
+        for <olabisi_uat@hotmail.com>; Fri, 12 May 2023 07:15:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1683900908; x=1686492908;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=FMYdEQBtrVaKDVQEtu5JhQTtyThwMMEz05auj1JjC/0=;
+        b=sh0GcMJGbluIXZLHI2SqrTpfB3JIPFcBeInUT7vdHUxlO7hYiBXl8ALkdFAtMSx6m4
+         m431naDxf3poTrSMBmO29BhzB+CFp0mfih1noqC6M4+ka91DZoAGOBGFKp3iFCQuZZw9
+         USicHqW3lxKdtl+gjW6y8Jb5tR52kacFPoqwD/t42W5QsufzCV0jH/ELvn5jEa8aPwsB
+         BLyif9rrYzEOJ2Z6FDWQ60UfAGWcaClksrOHH9EvxgR5NZqgRsfy8HXA4F/wgbU0IqOP
+         BXZgX8ziR6orM/5OoJeEFLPxaBoiK4DyEa66ugs9wdpvLvkFbarlKkQl9K9izTj3JMFp
+         vbxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1683900908; x=1686492908;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=FMYdEQBtrVaKDVQEtu5JhQTtyThwMMEz05auj1JjC/0=;
+        b=bJRRuWMaFuXzvgIqWSNYX3liTA/yZb5ko5uf07z16R3mgNjCLgD0YSeyiD90ernZRi
+         qg+dlb20gqWzw2TVcp2jtUN+WOjnhd8miqE1kNOH24Te2ZQamet0FUo5aizwzLyGD7LK
+         NBCJcr/+oltCBNpCB+hyA51+EVTET7l/6cJS6rxf7h9D8V9NbpJmPWuDaDPoQXLWiWn/
+         lRUmtxBVxR0CRAIahv/wUL9AWgbWJowhxA0JDgwmq15Bv1wtT/+13QQtAJ6Bt4H8L2MV
+         n0DY0fLdLBgtkNlBHIc2Qw67Uu/bb9GHrGeiCaKdMneZw6ZkDqRQlXNZ0G75RfnSmd0R
+         poig==
+X-Gm-Message-State: AC+VfDxJsaE24XQI4DMeROdbeI+XVFUrHnk4Lj7zMzpSevBWavvUxHqN
+	BZrVa/rtbmn3hSayKFRdTFOAdzgqpljNtH5ebfp8quvw
+X-Google-Smtp-Source: ACHHUZ6XJiYA02GociaTR4z21rrEwDrw7Z6tt/DITbqf3F46lVuIArjH+kxa+SfzKwfjMb6lcD7hXPs2Y7Oh7Y+5B0I=
+X-Received: by 2002:a05:6102:33c8:b0:434:76c4:6b64 with SMTP id
+ w8-20020a05610233c800b0043476c46b64mr9491278vsh.2.1683900907852; Fri, 12 May
+ 2023 07:15:07 -0700 (PDT)
+From: Olabisi Gbadegun <olabisig765@gmail.com>
+Date: Fri, 12 May 2023 15:13:56 +0100
+Message-ID: <CACAGU_cb=gvtqX7c+n7ikqD329SHf8JuDir9RtYLC6sH2xmk=g@mail.gmail.com>
+Subject:
+To: olabisi_uat@hotmail.com
+Content-Type: multipart/alternative; boundary="0000000000007317d505fb7fbbda"
+X-IncomingHeaderCount: 13
+Return-Path: olabisig765@gmail.com
+X-MS-Exchange-Organization-ExpirationStartTime: 12 May 2023 14:15:08.4496
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ fd3188f2-9175-4de5-5899-08db52f34a8f
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic:
+ BN8NAM11FT115:EE_|GV1P193MB2008:EE_|AS8P193MB2031:EE_
+X-MS-Exchange-Organization-AuthSource:
+ BN8NAM11FT115.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-UserLastLogonTime: 5/12/2023 1:13:25 PM
+X-MS-Office365-Filtering-Correlation-Id: fd3188f2-9175-4de5-5899-08db52f34a8f
+X-MS-Exchange-EOPDirect: true
+X-Sender-IP: 209.85.217.43
+X-SID-PRA: OLABISIG765@GMAIL.COM
+X-SID-Result: PASS
+X-MS-Exchange-Organization-PCL: 2
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2023 14:15:08.4183
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: fd3188f2-9175-4de5-5899-08db52f34a8f
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-AuthSource:
+ BN8NAM11FT115.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg:
+ 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1P193MB2008
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.0841459
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.6387.020
+X-Microsoft-Antispam-Mailbox-Delivery:
+	abwl:0;wl:0;pcwl:0;kl:0;dwl:0;dkl:0;rwl:0;ucf:0;jmr:0;ex:0;auth:1;dest:I;ENG:(5062000305)(90000117)(90011020)(91015020)(91040095)(9050020)(9060121)(9081003)(9100338)(4810010)(4910033)(8820095)(9930004)(9545005)(10172021)(9320005);
+X-Message-Info:
+	qZelhIiYnPmQwzKtUE/O0xNgyyBmkG3blzN3JIA4CY7yU9Z6ORN6pFBXugPjge6QLVZhuTb8x0OXw+Tfy5BUDILVnOT+GeeQqOG1VPukg+DbhfM2EkFL81ajxBn4vh43PWq/e+JhaowMc9xWhkiumhcWNm4ILIS67HOVvcEvzoGSpB+6683FenNmrMj+8fV+iZLPVsIOF9s=
+X-Message-Delivery: Vj0xLjE7dXM9MDtsPTA7YT0wO0Q9MTtHRD0yO1NDTD0tMQ==
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?OHFLazdqS1JIazNXNS91SWM4ODZpdFByWUx3NE1nK3hXTEd4KzRqSnpWbmxP?=
+ =?utf-8?B?T1dybXhCRXpVNEFOMXhydHZRdlZEbk9ZSkZkdGYxNzJUN2U3eGJPQWtaT2hw?=
+ =?utf-8?B?WklZLzl1b2RZVmc2bzZiWDhUWXJTeXVnMWR1Z0p5KzU2NzhUaTczTjdyWnJN?=
+ =?utf-8?B?ZGFudnJ4cTR5SUZxU2NQalhQVzM2TkYwOGdRTU1NL09ZdGdHYkpHMEh0S0sw?=
+ =?utf-8?B?bzZsRmJ1ZHFPSk1PdWFmaWl3Rm16Zm5TMXJlRnN4V05vK2o4a0FENGh6cW5L?=
+ =?utf-8?B?c1YyTDlFZEpCSktOcmlua2RGLzhXeFVyaTZJU1RYaUJheDM4QUh6VkdIK1dL?=
+ =?utf-8?B?U2hjcUw3OGdUc0p4Wk54REk1MVJ6WkIwVytBdE9ENzVYZ3AwWWVFcDZkdURx?=
+ =?utf-8?B?T2xwZHZCT3FiL1BTdTN0c1VBa01ndnJ4RlVNSEJmeUY0c0xPSVp2dzg1b0FR?=
+ =?utf-8?B?OVRsUExUMFlYYk9RTkdYQ0xYSnh1eGhYbTM4Vlk0dkxUZm9SYnhlWVhiSTRq?=
+ =?utf-8?B?YTZoRlBMRVVvV2tXQTgyZmVlbkFUaUJKTUhoaVBqcnJwMGZwallSc2tybmRW?=
+ =?utf-8?B?Zmd6STNKQkhqU1BUMEtxZFovdVpMRzFIWnc4MXlwK0dteFR6cndkeXQ2a3Zp?=
+ =?utf-8?B?dFREdXdIb1pua3dBZ3cwb0Iyd1QxUWhBa1BZNVpCMWRXMC9tMGlYY09UVzNF?=
+ =?utf-8?B?UUtGNUxEOXVzdlBZTjRGMGZIMGkxNVBiYzFMcVdSR0oxZWNTYmpJSHV5QWNH?=
+ =?utf-8?B?OTFGU2JVNWVubUxUT2RxWFRVdEdJYTJKcGxaM3gxUng3eHRqNU9uM3ZiRGxF?=
+ =?utf-8?B?SmE5Y0tabC9Oci91dTRnbHZzZFliekR1S2s2bXY5YVRFSWsvdG1IanVhcFBM?=
+ =?utf-8?B?S3dJOTRvMXk4UmJmZmZLUUdEaHIvL2pDajBTVEJadkxDQmNOclNyTDV3ODJM?=
+ =?utf-8?B?M2U2bU1aeXFqcHdEUWR6QXhHTnMzQnZQUEh3ZXpOcVJoVWlpQ3NhbHI1WVVM?=
+ =?utf-8?B?em43OEtnRFdvd2VuRTJwY3Y4ZnNzVEwvL0V3eGVVL3VQK3FDeHJwRWJZZFVB?=
+ =?utf-8?B?Smk4amxKVXJLSTZSaEhYMm9mZGlaYXNuc1o2Y3p6N3NLWWh5Mm5MZVM2TFhh?=
+ =?utf-8?B?VURFcDZRR0ZBQlJzUnVNMTNON0hFRSt3WHVPNlpZaG1UR25IWVNoOURKVVRu?=
+ =?utf-8?B?aFVBZnN3L1pCWjBSbWFzTlZpTitiaTd3TTROV1VrRmdLVWhObmlSUjhkSUd3?=
+ =?utf-8?B?YXBSSUNkQUE0SVRFa2dKYVhaSElIYWdEY0VYaGo0YmpjZkFSUk9nKzRUVXpS?=
+ =?utf-8?B?RGNnZFZnYS9DN1p2aEV2aVJBMGlSNzg5RzhyVzFQNTI1Qm02Sm9BcDRJcHJl?=
+ =?utf-8?B?NEZ4VmR0VmlEeDYzbGlvSTlxUDZIR1ZBdXhSN1paWU95K0huNWpnZjNxZlI0?=
+ =?utf-8?B?V2MwanJLcEQ1cjYva1krQ2U1NndSSkhWb3dISEdhaGZRenQ1U3FNdlMxOUdt?=
+ =?utf-8?B?NXI0VDRKdG1JajVRbEZwbDlSYU1rZDYyMmhWMmZYa2YxN1NwSGNqMFN2cmpl?=
+ =?utf-8?B?WGNGSEdSZGRJSDdmOUhOY0hmVlZWQTFQUG9BbUY4US8xOVZNOHNHRDVjaWFu?=
+ =?utf-8?B?K1FwTzRXWmZteUM1OGdranZmbHRBbE9OOWZaYlNOMVRZUzk2ZktwNVJHYm9O?=
+ =?utf-8?B?QUZsM0laTDRKcHdsYlJqS004VmgxMngveGt6ZTdjejI0dVRsQytCWEN3QVlh?=
+ =?utf-8?B?VGp4alRNODNLQUFndUNxcTFET1pvMlZ4cTB2OHZJS2lGK0xmSXVWZmJjK2NL?=
+ =?utf-8?B?MmpBRXRFTlZwSDl5VzM0K3BKTGZGbWFrUU1tbmVBTGtzeHJJSG1NdFU4ZE1Q?=
+ =?utf-8?B?L2pEVU5ZanV0cTJQdmliVHJFcnhSOENZclM3YXM5KzJGY1BXYXVIeFA2QkJM?=
+ =?utf-8?B?QndIMms4b2hhWi9LM0p6eFY5cFpqV0w4WXphems3WlcyWWZpckdwNjBtS2dE?=
+ =?utf-8?B?THNsMk9zY1dtUWhYRjZVUnVQYzdKbUVHMkF3a3VEMUhrM2ZrQmFpaDBWaEY4?=
+ =?utf-8?B?ZVlJc2c1akEyV0NUbUVjeEJjZHRLZUt4R2h0Zz09?=
+MIME-Version: 1.0
+
+--0000000000007317d505fb7fbbda
+Content-Type: text/plain; charset="UTF-8"
+
+Risk-Based Testing approach is the assessment of the functionality of the
+software. This functionality has the highest impact on the probability of
+its failure.
+
+THERE ARE 3 TYPES OF RISK OCCURRENCE IN SOFTWARE ENGINEERING.
+
+1)Product Risk.
+Product risk becomes a major threat when there is a lack of requirements,
+the product is complex. And also, when there is a constant challenge to
+meet the demand of the end functionality. Or, to meet the needs of
+potential users. And, this includes meeting the expectations of the product
+stakeholders.
+
+2) Project Risk.
+Project risk is based mostly on external issues. These enlist contract
+signing, delays on both sides and personal problems. To add, there might be
+constraints that are not related to work and other similar issues.
+
+3) Process Risk.
+What can be at risk in a software process? Mainly, planning, management
+issues, inaccurate project estimates, and delays. And, also, deadlines that
+cannot be changed, miscomprehension of project complexity, and other
+important things.
+
+IMPORTANCE OF RISK BASED TESTING.
+* If your software is mission-critical.
+* If your iteration deadlines are rigid and Agile-based.
+* If there is an overdue development via the Waterfall methodology.
+
+--0000000000007317d505fb7fbbda
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"auto">Risk-Based Testing approach is the assessment of the functi=
+onality of the software. This functionality has the highest impact on the p=
+robability of its failure.<div dir=3D"auto"><br></div><div dir=3D"auto">THE=
+RE ARE 3 TYPES OF RISK OCCURRENCE IN SOFTWARE ENGINEERING.</div><div dir=3D=
+"auto"><br></div><div dir=3D"auto">1)Product Risk.</div><div dir=3D"auto">P=
+roduct risk becomes a major threat when there is a lack of requirements, th=
+e product is complex. And also, when there is a constant challenge to meet =
+the demand of the end functionality. Or, to meet the needs of potential use=
+rs. And, this includes meeting the expectations of the product stakeholders=
+.</div><div dir=3D"auto"><br></div><div dir=3D"auto">2) Project Risk.</div>=
+<div dir=3D"auto">Project risk is based mostly on external issues. These en=
+list contract signing, delays on both sides and personal problems. To add, =
+there might be constraints that are not related to work and other similar i=
+ssues.</div><div dir=3D"auto"><br></div><div dir=3D"auto">3) Process Risk.<=
+/div><div dir=3D"auto">What can be at risk in a software process? Mainly, p=
+lanning, management issues, inaccurate project estimates, and delays. And, =
+also, deadlines that cannot be changed, miscomprehension of project complex=
+ity, and other important things.</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">IMPORTANCE OF RISK BASED TESTING.</div><div dir=3D"auto">* If you=
+r software is mission-critical.</div><div dir=3D"auto">* If your iteration =
+deadlines are rigid and Agile-based.</div><div dir=3D"auto">* If there is a=
+n overdue development via the Waterfall methodology.</div></div>
+
+--0000000000007317d505fb7fbbda--
